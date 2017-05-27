@@ -8,3 +8,7 @@ Esse projeto foi gerado [Angular CLI](https://github.com/angular/angular-cli) ve
 
 Comando `ng serve` para executar o servidor de desenvolvimento. Usando porta 4200 `http://localhost:4200/`. A aplicação irá recarregar caso identifique alteração nos arquivos ```src```.
 
+## UIKIT Framework
+
+- https://getuikit.com/docs/installation ```npm install uikit```
+
