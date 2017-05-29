@@ -2,13 +2,16 @@
 
 Esse projeto foi gerado [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
-```$ ng new typescript-angular4```
+# Angular 4 CLI 
 
-## Servidor de Desenvolvimento
+- Creating a new project ```$ ng new typescript-angular4```
+- CReating a new component ```$ ng generate component componentName```
 
-Comando `ng serve` para executar o servidor de desenvolvimento. Usando porta 4200 `http://localhost:4200/`. A aplicação irá recarregar caso identifique alteração nos arquivos ```src```.
+## Development Server
 
-## UIKIT Framework
+CLI `ng serve` to run the development server `http://localhost:4200/`. The browser will watch the folder called ```src``` to reload the view if any changes.
 
-- https://getuikit.com/docs/installation ```npm install uikit```
+## Materializecss Framework
+
+- http://materializecss.com/ ```npm install materialize-css```
 
