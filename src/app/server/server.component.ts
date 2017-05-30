@@ -6,29 +6,22 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html'
 })
 export class ServerComponent {
-  // tslint:disable-next-line:no-inferrable-types
   serverId: number = 10;
-  // tslint:disable-next-line:no-inferrable-types
   serverStatus: string = 'Offline';
-  // tslint:disable-next-line:no-inferrable-types
   allowNewServer: boolean = false;
-
-  // tslint:disable-next-line:no-inferrable-types
-  server: string;
-  // tslint:disable-next-line:no-inferrable-types
+  serverCreated: boolean = false;
   serverName: string = 'Initial Name';
 
   constructor() {
     setTimeout( () => {
       this.allowNewServer = true;
-      this.server = 'No Server';
     }
     , 2000);
   }
 
   getServerStatus() { return this.serverStatus; };
 
-  onCreateServer() { this.server = 'Server Created'; };
+  onCreateServer() { this.serverCreated = true; };
   onChangeServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
   };

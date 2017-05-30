@@ -15,7 +15,7 @@
       <label>Event Binding</label>
       <p class="indigo-text text-darken-2">{{'Server'}} ID {{ serverId }} is {{getServerStatus()}}</p>
       <button class="waves-effect waves-light btn" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-      <p>{{server}}</p>
+      <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
     </div>
   </div>
 </div>
