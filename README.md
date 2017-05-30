@@ -1,11 +1,11 @@
 # TypescriptAngular4
 
-Esse projeto foi gerado [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
+Project initiated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
 # Angular 4 CLI 
 
 - Creating a new project ```$ ng new typescript-angular4```
-- CReating a new component ```$ ng generate component componentName```
+- Creating a new component ```$ ng generate component componentName```
 
 ## Development Server
 
