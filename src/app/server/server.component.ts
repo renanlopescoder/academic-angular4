@@ -15,8 +15,8 @@ export class ServerComponent {
 
   // tslint:disable-next-line:no-inferrable-types
   server: string;
-
-  serverName: string;
+  // tslint:disable-next-line:no-inferrable-types
+  serverName: string = 'Initial Name';
 
   constructor() {
     setTimeout( () => {

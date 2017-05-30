@@ -1,14 +1,21 @@
 <div class="container">
   <div class="card">
     <div class="card-content">
-      <div class="card-title">Server</div>
-        <label>Server Name</label>
-        <input type="text" (input)="onChangeServerName($event)">
-        <p>{{ serverName }}</p>
-        <p class="indigo-text text-darken-2">{{'Server'}} ID {{ serverId }} is {{getServerStatus()}}</p>
-        <button class="waves-effect waves-light btn" [disabled]="!allowNewServer" 
-        (click)="onCreateServer()">Add Server</button>
-        <p>{{server}}</p>
+      <div class="card-title">Databinding Samples</div>
+      <label>Input One Way (One Way Databinding)</label>
+      <input type="text" (input)="onChangeServerName($event)">
+      <label>Result: {{ serverName }}</label>
+      <br>
+      <br>
+      <label>Input Two Way (Two Way Databinding)</label>
+      <input type="text" [(ngModel)]="serverName">
+      <label>Result: {{ serverName }}</label>
+      <br>
+      <br>
+      <label>Event Binding</label>
+      <p class="indigo-text text-darken-2">{{'Server'}} ID {{ serverId }} is {{getServerStatus()}}</p>
+      <button class="waves-effect waves-light btn" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+      <p>{{server}}</p>
     </div>
   </div>
 </div>
