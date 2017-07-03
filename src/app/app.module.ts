@@ -8,6 +8,9 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { ProjetoModule } from './projeto/projeto.module';
+import { routing } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ProjetoModule,
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

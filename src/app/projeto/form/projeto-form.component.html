@@ -1,0 +1,27 @@
+
+  <div class="container">
+    <div class="row">
+    <div class="col l12 s12 m12">
+    <h4 class="indigo-text text-darken-3 russo-font center-align">Projeto</h4>
+    <div class="card z-depth-3">
+      <div class="card-content" id="form-documento">
+        <div class="row">
+          <form class="col s12" (submit)="cadastrar($event)">
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <label>Nome do Projeto</label>
+                <input name="projeto" class="validate" [(ngModel)]="projeto.project">
+              </div>
+              <div class="col s12 m6 l6">
+                <label>Descrição</label>
+                <input name="description" class="browser-default" [(ngModel)]="projeto.description">
+              </div>
+            </div>
+            <button [routerLink]="['']" class="btn">Voltar</button>
+            <button class="btn" type="submit">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div></div>
