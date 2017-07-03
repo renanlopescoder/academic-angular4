@@ -4,13 +4,13 @@
     <div class="col s12 m12 l12">
       <div class="card z-depth-2" *ngFor="let projeto of projetos | pesquisa: inputPesquisa.value">
         <div class="card-content">
-          <a [routerLink]="['altera',projeto._id]"><p class="card-title">{{projeto.project}}</p></a>
+          <a href="#!"><p class="card-title">{{projeto.project}}</p></a>
           <span class="yellow-text text-darken-3" [innerHTML]="projeto.description"></span>
           <div class="collection with-header">
             <a href="#!" class="collection-item">Tecnologias: {{projeto.technologies}}</a>
             <a href="#!" class="collection-item">Status: {{projeto.status}}</a>
-            <a href="#!" class="collection-item">Link GitHub: {{projeto.githubLink}}</a>
-            <a href="#!" class="collection-item active">DEMO: {{projeto.demoLink}}</a>
+            <a href="{{projeto.githubLink}}" target="_blank" class="collection-item">Link GitHub: {{projeto.githubLink}}</a>
+            <a href="{{projeto.demoLink}}" class="collection-item active" target="_blank">DEMO: {{projeto.demoLink}}</a>
           </div>
         </div>
         <div class="card-action">
@@ -20,7 +20,7 @@
           <div class="right-align">
             <button class="btn-floating btn-large red darken-2 z-depth-2" (click)="delete(projeto)"><i class="material-icons">delete</i></button>
             &nbsp;&nbsp;
-            <button class="btn-floating btn-large indigo darken-4 z-depth-2" [routerLink]="['altera',projeto._id]"><i class="material-icons">mode_edit</i></button>
+            <button class="btn-floating btn-large indigo darken-4 z-depth-2" [routerLink]="['alterar',projeto._id]"><i class="material-icons">mode_edit</i></button>
           </div>
         </div>
       </div>

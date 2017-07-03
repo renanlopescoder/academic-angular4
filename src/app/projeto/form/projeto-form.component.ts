@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProjetoService } from '../projeto.service';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'projeto',
     templateUrl: './projeto-form.component.html'
 })
@@ -16,7 +17,7 @@ export class ProjetoFormComponent {
     service: ProjetoService;
     router: Router;
 
-    constructor(service: ProjetoService, route: ActivatedRoute, router: Router) {
+    constructor (service: ProjetoService, route: ActivatedRoute, router: Router) {
         this.service = service;
         this.route = route;
         this.router = router;
@@ -26,26 +27,18 @@ export class ProjetoFormComponent {
 
             if (id) {
                 this.service.selecionar(id)
-                .subscribe(projeto => this.projeto = projeto.json());
+                    .subscribe(projeto => this.projeto = projeto.json());
             }
         });
     }
 
-    cadastrar(event) {
+    salvar(event) {
         event.preventDefault();
-        this.service.cadastra(this.projeto)
+        this.service.salvar(this.projeto)
             .subscribe(() => {
                 console.log('salvo com sucesso');
                 this.projeto = new ProjetoComponent();
                 this.router.navigate(['']);
-            }, erro => console.log(erro));
-    }
-
-    alterar() {
-        this.service.cadastra(this.projeto)
-            .subscribe(() => {
-                console.log('salvo com sucesso');
-                this.projeto = new ProjetoComponent();
             }, erro => console.log(erro));
     }
 }
