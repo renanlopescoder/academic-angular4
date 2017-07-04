@@ -2,9 +2,10 @@
   "name": "typescript-angular4",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "nodemon ./server",
+    "start": "nodemon",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
