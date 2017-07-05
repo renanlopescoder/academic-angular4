@@ -20,13 +20,13 @@ var ProjetoComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lista_lista_projetos_component__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__form_projeto_form_component__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lista_lista_projetos_component__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__form_projeto_form_component__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lista_pesquisa_projeto_pipes__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__projeto_service__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjetoModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -52,7 +52,7 @@ ProjetoModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_2__angular_common__["i" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* routing */]
+            __WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* routing */],
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_3__lista_lista_projetos_component__["a" /* ListaProjetosComponent */],
@@ -114,7 +114,7 @@ module.exports = "  <nav class=\"indigo darken-3\">\n    <div class=\"nav-wrappe
 /***/ 159:
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"container\">\n    <div class=\"row\">\n    <div class=\"col l12 s12 m12\">\n    <h4 class=\"indigo-text text-darken-3 russo-font center-align\">Projeto</h4>\n    <div class=\"card z-depth-3\">\n      <div class=\"card-content\" id=\"form-documento\">\n        <div class=\"row\">\n          <form class=\"col s12\" (submit)=\"salvar($event)\">\n            <div class=\"row\">\n              <div class=\"col s12 m6 l3\">\n                <label>Nome do Projeto</label>\n                <input name=\"projeto\" class=\"validate\" [(ngModel)]=\"projeto.project\">\n              </div>\n              <div class=\"col s12 m6 l6\">\n                <label>Descrição</label>\n                <input name=\"description\" class=\"browser-default\" [(ngModel)]=\"projeto.description\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Autor</label>\n                <input name=\"author\" class=\"browser-default\" [(ngModel)]=\"projeto.author\">\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col s12 m6 l6\">\n                <label>Tecnologias</label>\n                <input name=\"technologies\" class=\"validate\" [(ngModel)]=\"projeto.technologies\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Status</label>\n                <input name=\"status\" class=\"validate\" [(ngModel)]=\"projeto.status\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>DEMO Link</label>\n                <input name=\"demoLink\" class=\"browser-default\" [(ngModel)]=\"projeto.demoLink\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>GitHub Link</label>\n                <input name=\"githubLink\" class=\"browser-default\" [(ngModel)]=\"projeto.githubLink\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Link do Autor</label>\n                <input name=\"authorLink\" class=\"validate\" [(ngModel)]=\"projeto.authorLink\">\n              </div>\n            </div>\n            <button [routerLink]=\"['']\" class=\"btn\">Voltar</button>\n            <button class=\"btn\" type=\"submit\">Salvar</button>\n          </form>\n        </div>\n      </div>\n    </div>\n    </div>\n  </div></div>"
+module.exports = "\n  <div class=\"container\">\n    <div class=\"row\">\n    <div class=\"col l12 s12 m12\">\n    <h4 class=\"indigo-text text-darken-3 russo-font center-align\">Projeto</h4>\n    <div class=\"card z-depth-3\">\n      <div class=\"card-content\" id=\"form-documento\">\n        <div class=\"row\">\n          <form #meuForm=\"ngForm\" class=\"col s12\" (submit)=\"salvar($event)\">\n            <div class=\"row\">\n              <div class=\"col s12 m6 l3\">\n                <label>Nome do Projeto</label>\n                <span *ngIf=\"project.invalid\" class=\"badge new red\" data-badge-caption=\"Obrigatório\"></span>\n                <input name=\"projeto\" [(ngModel)]=\"projeto.project\" required #project=\"ngModel\">\n              </div>\n              <div class=\"col s12 m6 l6\">\n                <label>Descrição</label>\n                <input name=\"description\" class=\"browser-default\" [(ngModel)]=\"projeto.description\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Autor</label>\n                <span *ngIf=\"author.invalid\" class=\"badge new red\" data-badge-caption=\"Obrigatório\"></span>\n                <input name=\"author\" #author=\"ngModel\" required class=\"browser-default\" [(ngModel)]=\"projeto.author\">\n              </div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col s12 m6 l6\">\n                <label>Tecnologias</label>\n                <span *ngIf=\"technologies.invalid\" class=\"badge new red\" data-badge-caption=\"Obrigatório\"></span>\n                <input name=\"technologies\" #technologies=\"ngModel\" required class=\"validate\" [(ngModel)]=\"projeto.technologies\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Status</label>\n                <input name=\"status\" class=\"validate\" [(ngModel)]=\"projeto.status\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>DEMO Link</label>\n                <input name=\"demoLink\" class=\"browser-default\" [(ngModel)]=\"projeto.demoLink\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>GitHub Link</label>\n                <input name=\"githubLink\" class=\"browser-default\" [(ngModel)]=\"projeto.githubLink\">\n              </div>\n              <div class=\"col s12 m6 l3\">\n                <label>Link do Autor</label>\n                <input name=\"authorLink\" class=\"validate\" [(ngModel)]=\"projeto.authorLink\">\n              </div>\n            </div>\n            <button [routerLink]=\"['']\" class=\"btn\">Voltar</button>\n            <button class=\"btn\" type=\"submit\" [disabled]=\"meuForm.form.invalid\">Salvar</button>\n          </form>\n        </div>\n      </div>\n    </div>\n    </div>\n  </div></div>"
 
 /***/ }),
 
@@ -128,7 +128,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <input #
 /***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(91);
+module.exports = __webpack_require__(90);
 
 
 /***/ }),
@@ -137,7 +137,7 @@ module.exports = __webpack_require__(91);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(3);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjetoService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -192,13 +192,13 @@ var _a;
 
 /***/ }),
 
-/***/ 62:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__projeto_lista_lista_projetos_component__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__projeto_form_projeto_form_component__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__projeto_lista_lista_projetos_component__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__projeto_form_projeto_form_component__ = __webpack_require__(62);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
 
 
@@ -214,13 +214,13 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule 
 
 /***/ }),
 
-/***/ 63:
+/***/ 62:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__projeto_component__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__projeto_service__ = __webpack_require__(34);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjetoFormComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -277,7 +277,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 64:
+/***/ 63:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -332,7 +332,7 @@ var _a;
 
 /***/ }),
 
-/***/ 90:
+/***/ 89:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -341,12 +341,12 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 90;
+webpackEmptyContext.id = 89;
 
 
 /***/ }),
 
-/***/ 91:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -403,11 +403,10 @@ AppComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__projeto_projeto_module__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routes__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__projeto_projeto_module__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routes__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -415,7 +414,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -430,17 +428,16 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__projeto_projeto_module__["a" /* ProjetoModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_6__app_routes__["a" /* routing */]
+            __WEBPACK_IMPORTED_MODULE_4__projeto_projeto_module__["a" /* ProjetoModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_5__app_routes__["a" /* routing */],
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 

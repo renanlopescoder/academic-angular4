@@ -11,7 +11,7 @@ import { routing } from '../app.routes';
   imports: [
     CommonModule,
     FormsModule,
-    routing
+    routing,
   ],
   declarations: [
     ListaProjetosComponent,

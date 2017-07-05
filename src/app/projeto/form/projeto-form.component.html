@@ -6,11 +6,12 @@
     <div class="card z-depth-3">
       <div class="card-content" id="form-documento">
         <div class="row">
-          <form class="col s12" (submit)="salvar($event)">
+          <form #meuForm="ngForm" class="col s12" (submit)="salvar($event)">
             <div class="row">
               <div class="col s12 m6 l3">
                 <label>Nome do Projeto</label>
-                <input name="projeto" class="validate" [(ngModel)]="projeto.project">
+                <span *ngIf="project.invalid" class="badge new red" data-badge-caption="Obrigatório"></span>
+                <input name="projeto" [(ngModel)]="projeto.project" required #project="ngModel">
               </div>
               <div class="col s12 m6 l6">
                 <label>Descrição</label>
@@ -18,13 +19,15 @@
               </div>
               <div class="col s12 m6 l3">
                 <label>Autor</label>
-                <input name="author" class="browser-default" [(ngModel)]="projeto.author">
+                <span *ngIf="author.invalid" class="badge new red" data-badge-caption="Obrigatório"></span>
+                <input name="author" #author="ngModel" required class="browser-default" [(ngModel)]="projeto.author">
               </div>
             </div>
             <div class="row">
               <div class="col s12 m6 l6">
                 <label>Tecnologias</label>
-                <input name="technologies" class="validate" [(ngModel)]="projeto.technologies">
+                <span *ngIf="technologies.invalid" class="badge new red" data-badge-caption="Obrigatório"></span>
+                <input name="technologies" #technologies="ngModel" required class="validate" [(ngModel)]="projeto.technologies">
               </div>
               <div class="col s12 m6 l3">
                 <label>Status</label>
@@ -44,7 +47,7 @@
               </div>
             </div>
             <button [routerLink]="['']" class="btn">Voltar</button>
-            <button class="btn" type="submit">Salvar</button>
+            <button class="btn" type="submit" [disabled]="meuForm.form.invalid">Salvar</button>
           </form>
         </div>
       </div>
