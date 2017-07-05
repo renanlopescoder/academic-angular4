@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <input #inputPesquisa placeholder="Pesquisa" (keyup)="3">
+    <button class="btn col s3 m2 l2" [routerLink]="['cadastro']">Cadastro</button>
+    <input class="col s9 m9 l9 offset-m1 offset-l1" #inputPesquisa placeholder="Pesquisa" (keyup)="3">
     <div class="col s12 m12 l12">
       <div class="card z-depth-2" *ngFor="let projeto of projetos | pesquisa: inputPesquisa.value">
         <div class="card-content">
