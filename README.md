@@ -6,6 +6,7 @@ Project initiated with [Angular CLI](https://github.com/angular/angular-cli) ver
 
 - Creating a new project ```$ ng new typescript-angular4```
 - Creating a new component ```$ ng generate component componentName```
+- Build production code ```$ ng build --env=prod```
 
 ## Development Server
 
