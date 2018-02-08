@@ -18,24 +18,24 @@ export class ProjetoService {
   public salvar(projeto: ProjetoComponent) {
     if (projeto._id) {
 
-      return this.http.put(`${this.url}/update/project/${projeto._id}`, JSON.stringify(projeto), { headers: this.headers });
+      return this.http.put(`${this.url}/projects/update/${projeto._id}`, JSON.stringify(projeto), { headers: this.headers });
 
     } else {
 
-        return this.http.post(`${this.url}/create/project`, JSON.stringify(projeto), { headers: this.headers });
+        return this.http.post(`${this.url}/projects/create`, JSON.stringify(projeto), { headers: this.headers });
 
     }
   };
 
   public lista() {
-    return this.http.get(`${this.url}/list/projects`);
+    return this.http.get(`${this.url}/projects`);
   };
 
   public selecionar(id: string) {
-    return this.http.get(`${this.url}/select/project/${id}`);
+    return this.http.get(`${this.url}/projects/select/${id}`);
   };
 
   public remove(projetoId: ProjetoComponent) {
-    return this.http.delete(`${this.url}/delete/project/${projetoId}`);
+    return this.http.delete(`${this.url}/projects/delete/${projetoId}`);
   };
 };
